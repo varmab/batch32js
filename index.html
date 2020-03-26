@@ -29,6 +29,9 @@
                 1:"one"
             }
 
+            //dot notation
+            console.log(student.name)
+            console.log(student["college name"])
 
             //Conditional Statements
 
@@ -90,6 +93,55 @@
                 default:
                     console.log("Color is unknown")
             }
+
+        //Loop
+
+        //while
+        var a=0;
+
+        while(a<=10){
+            console.log(a);
+            if(a>5) break;
+            a++;
+        }
+
+        //do..while
+
+        var b=0;
+        do {
+            console.log(b);
+            b++;
+        }
+        while(b<=10)
+
+        //for
+        for(var c=0;c<=10;c++){
+            console.log(c)
+        }
+
+        //break statement to get out of loop on a condition
+        //continue statement to continue the loop
+
+        //Math Object
+
+        console.log(Math.PI)
+
+        var total=add(1,2);
+        console.log(total);
+
+        //function declaration //JavaScript Hoising
+        function add(a,b){
+            return a+b;
+        }
+
+        console.log(sum(2,3))
+
+        //function expression
+        var sum=function(a,b){
+            return a+b;
+        }
+
+        
 
         </script>
         <script src="class.js"></script>
