@@ -19,8 +19,7 @@
 
             age=null;
 
-            var myNumbers=["one","two","three"];
-
+            
             var student={
                 name:"Varma",
                 age:46,
@@ -134,14 +133,73 @@
             return a+b;
         }
 
-        console.log(sum(2,3))
-
         //function expression
         var sum=function(a,b){
             return a+b;
         }
 
+        console.log(sum(2,3))
+
+        //Arrays
+        var myNumbers=["one","two","three"];
+
+        myNumbers.push("four"); //adds new item at the end of the array
+        myNumbers.unshift("zero"); //adds at the beginning
+        myNumbers.pop(); //Removes last item from array
+        myNumbers.shift(); //Remove item from beginning
+
+        var myLetters=["a","b","c"];
+
+        console.log(myLetters.join()); //a,b,c
+        console.log(myLetters.join("")); //abc
+        console.log(myLetters.join("|"));//a|b|c
+
+        myLetters.forEach(function(value,position){
+            console.log(value + " at " + position)
+        })
+
+        var ages=[32,9,12,24];
+
+        //Is are all adults?
+
+        var isAllAdults=ages.every(function(a){
+            return a>=18;
+        })
+
+        console.log(isAllAdults);
+
+        var isAnyAdult=ages.some(function(age){
+            return age>=18
+        })
+
+        console.log(isAnyAdult);
+
+        //filter
+        var adultsOnly=ages.filter(function(age){
+            return age>=18
+        })
+
+        console.log(adultsOnly);
+
+        var myMarks=[90,35,45];
+
+        var myNewMarks=myMarks.map(function(mark){
+            if(mark<50){
+                return mark+10;
+            }
+            else
+            {
+                return mark;
+            }
+        })
         
+        console.log(myNewMarks);
+
+        var totalMarks=myMarks.reduce(function(total,mark){
+            return total+mark;
+        })
+
+        console.log(totalMarks);
 
         </script>
         <script src="class.js"></script>
