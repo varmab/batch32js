@@ -201,6 +201,109 @@
 
         console.log(totalMarks);
 
+
+
+        var movies=[
+            {
+                id:1,
+                title:"Bahubali",
+                actor:"Prabhas",
+                revenue:300,
+                theaters:["A","B"]
+            },
+            {
+                id:2,
+                title:"Adhurs",
+                actor:"NTR",
+                revenue:45,
+                theaters:["B","C"]
+            },
+            {
+                id:3,
+                title:"Kushi",
+                actor:"Pavan",
+                revenue:15,
+                theaters:["C","D"]
+            }
+        ]
+
+        //every, some, map , filter, reduce
+
+        //1.Is any movie crossed 50cr revenue?
+        var isAny50=movies.some(function(movie){
+            return movie.revenue>=50;
+        })
+
+        console.log(isAny50);
+
+        //2.Is all movies crossed 100cr revenue?
+        var isAll100=movies.every(function(movie){
+            return movie.revenue>=100;
+        })
+
+        console.log(isAll100)
+
+        //3. I want list of movies that is released in theater B
+        var bMovies=movies.filter(function(movie){
+            return movie.theaters.indexOf("B")!=-1;
+        })
+
+        console.log(bMovies);
+
+        //4. I want list of actors of all movies
+        // ["Prabhas","NTR","Pavan"]
+
+        var actors=movies.map(function(movie){
+            return movie.actor;
+        })
+
+        console.log(actors);
+
+        //5. I want total revenue of all movies.
+        var totalRevenue=movies.reduce(function(total,movie){
+            return total+movie.revenue;
+        },0)
+
+        console.log(totalRevenue);
+
+        //6. I want list of titles as one string
+        // "Bahubali, Adhurs, Kushi"
+        var titles=movies.reduce(function(titles,movie){
+            if(titles=="") return movie.title;
+            return titles + "," + movie.title;
+        },'')
+
+        console.log(titles);
+
+        //7. I want an object containing movie title as key and movie actor as value
+        /*
+            {
+                "Bahubali":"Prabhas",
+                "Adhurs":"NTR",
+                "Kushi":"Pavan"
+            }
+        */
+
+        var titleActors=movies.reduce(function(titleActors,movie){
+            titleActors[movie.title]=movie.actor;
+            return titleActors;
+        },{})
+
+        console.log(titleActors);
+
+        var user={};
+        user.name="Varma";
+        user["age"]=46;
+        var key="college name";
+        user[key]="JNTU";
+
+
+        //8. I want list of theaters of all movies without any duplicates
+        // ["A","B","C","D"]
+
+
+
+
         </script>
         <script src="class.js"></script>
     </head>
