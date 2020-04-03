@@ -206,17 +206,17 @@
         var movies=[
             {
                 id:1,
-                title:"Bahubali",
-                actor:"Prabhas",
-                revenue:300,
-                theaters:["A","B"]
-            },
-            {
-                id:2,
                 title:"Adhurs",
                 actor:"NTR",
                 revenue:45,
                 theaters:["B","C"]
+            },
+            {
+                id:2,
+                title:"Bahubali",
+                actor:"Prabhas",
+                revenue:300,
+                theaters:["A","B"]
             },
             {
                 id:3,
@@ -301,9 +301,123 @@
         //8. I want list of theaters of all movies without any duplicates
         // ["A","B","C","D"]
 
+        // var allTheaters=movies.reduce(function(theaters,movie){
+        //     movie.theaters.forEach(function(theater){
+        //         if(theaters.indexOf(theater)==-1) {
+        //             theaters.push(theater);
+        //         }
+        //     })
+        // },[])
+
+        // console.log(allTheaters);
 
 
+        //contact
 
+        //reverse
+
+        //sort
+        movies.sort(function(a,b){
+            if(a.revenue>b.revenue) return 1;
+            if(a.revenue<b.revenue) return -1;
+            return 0
+        })
+
+        console.log(movies);
+
+        var bahubali=movies.find(function(movie){
+            return movie.title=="Bahubali";
+        })
+
+
+        //Objects
+
+        var student={}
+        var person=new Object();
+
+        //Adding new key-value pair
+        student.name="Varma";
+        student["age"]=46;
+        student["college name"]="JNTU"
+
+        //Reading
+        console.log(student.name);
+        console.log(student["age"]);
+
+        var keyName="college name";
+        console.log(student[keyName]);
+
+        //Remove key value pair
+        delete student.age; //delete student["age"]
+
+        //check for existance of key using in operator
+        if("name" in student){
+            console.log("Name: " +  student.name);
+        }
+
+        // if(student.name){
+
+        // }
+        // else
+        // {
+
+        // }
+
+        //for..in loop
+        for(var key in student){
+            console.log(key)
+            console.log(student[key]) //No dot notation to acces here
+        }
+
+        // var varma=student;
+        // varma.degree="MTech"
+
+        //Cloning object
+        var varma=Object.assign({},student);
+        varma.degree="MTech"
+
+        var teacher={
+            subject:"JS"
+        }
+
+        //Merge objects
+        var instructor=Object.assign({},varma,teacher);
+
+        var allKeys=Object.keys(instructor);
+        var allValues=Object.values(instructor);
+
+        //comparing objects using equality operator
+        //it only compares references only not the contents of object
+        // {}=={}  false
+
+        var person={
+            name:"Varma",
+            address: {
+                street:"MIG 27/1",
+                city:"Hyderabad"
+            }
+        }
+
+        console.log(person.address.city);
+        console.log(person.address["street"])
+        console.log(person["address"]["street"])
+
+        //Strings
+
+        var myName="Varma B";
+
+        console.log(myName.length)
+        console.log(myName[0])
+        console.log(myName.charAt(0))
+
+        //Strings are immutable
+
+        console.log(myName.toUpperCase());
+
+        var fullName="Varma Bhupatiraju";
+
+        console.log(fullName.split(' '))
+        console.log(fullName.split(''));
         </script>
         <script src="class.js"></script>
     </head>
