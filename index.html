@@ -429,5 +429,47 @@
     <body>
         <h1>Welcome to JS class</h1>
         <p>Thank you for coming</p>
+        <h1>Goodbye</h1>
+        <ul>
+            <li id="highlight">List Item 1</li>
+            <li class="bolded">List Item 2</li>
+            <li class="bolded">List Item 3</li>
+        </ul>
     </body>
 </html>
+<script>
+    var h1=document.querySelector("h1"); //Select
+    h1.style.color="red"; //Manipulate
+
+    // var body = document.querySelector("body"); //SELECT
+    // var isBlue = false;
+
+    // setInterval(function(){   //MANIPULATE
+    //     if (isBlue) {
+    //         body.style.background = "white"; 
+    //     } else {
+    //         body.style.background = "#3498db";
+    //     }
+    //     isBlue = !isBlue;
+    // }
+    // , 1000);
+
+    //getElementById
+    var highlightLi=document.getElementById("highlight");
+    highlightLi.style.color="green";
+
+    //getElementsByClassName
+    var boldedLis=document.getElementsByClassName("bolded");
+    boldedLis[0].style.color="red";
+
+    //getElementsByTagName
+    var allLis=document.getElementsByTagName("li");
+    allLis[2].style.color="orange"
+
+    //querySelector - first matched element only
+    var firstBoldedLi=document.querySelector(".bolded")
+    var firstH1=document.querySelector("h1");
+    var highlightedLi=document.querySelector("#highlight");
+
+
+</script>
