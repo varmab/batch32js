@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Welcome to JS Class</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
             var myName="Varma";
             var age=46;
@@ -435,41 +436,165 @@
             <li class="bolded">List Item 2</li>
             <li class="bolded">List Item 3</li>
         </ul>
+
+        <button>Say Hello</button>
+
+        <div>Div 1</div>
+        <div class="highlight">Div 2</div>
+        <div id="third">Div 3</div>
+        <div class="highlight">Div 4</div>
     </body>
 </html>
 <script>
-    var h1=document.querySelector("h1"); //Select
-    h1.style.color="red"; //Manipulate
+    // var h1=document.querySelector("h1"); //Select
+    // h1.style.color="red"; //Manipulate
 
-    // var body = document.querySelector("body"); //SELECT
-    // var isBlue = false;
+    // // var body = document.querySelector("body"); //SELECT
+    // // var isBlue = false;
 
-    // setInterval(function(){   //MANIPULATE
-    //     if (isBlue) {
-    //         body.style.background = "white"; 
-    //     } else {
-    //         body.style.background = "#3498db";
-    //     }
-    //     isBlue = !isBlue;
+    // // setInterval(function(){   //MANIPULATE
+    // //     if (isBlue) {
+    // //         body.style.background = "white"; 
+    // //     } else {
+    // //         body.style.background = "#3498db";
+    // //     }
+    // //     isBlue = !isBlue;
+    // // }
+    // // , 1000);
+
+    // //getElementById
+    // var highlightLi=document.getElementById("highlight");
+    // highlightLi.style.color="green";
+
+    // //getElementsByClassName
+    // var boldedLis=document.getElementsByClassName("bolded");
+    // boldedLis[0].style.color="red";
+
+    // //getElementsByTagName
+    // var allLis=document.getElementsByTagName("li");
+    // allLis[2].style.color="orange"
+
+    // //querySelector - first matched element only
+    // var firstBoldedLi=document.querySelector(".bolded")
+    // var firstH1=document.querySelector("h1");
+    // var highlightedLi=document.querySelector("#highlight");
+
+
+</script>
+
+<script>
+    $("h1").css("color","red");
+    $("div").css("background","purple");
+    $(".highlight").css("width","200px");
+    $("#third").css("border","1px solid orange");
+    $("div:first").css("color","pink");
+
+    $("button").on("click",function(){
+        $.ajax({
+            url:"http://jsonplaceholder.typicode.com/posts/1",
+            success:function(data){
+                $("p").text(data.title);
+            }
+        })
+    })
+
+    $("h1:first").on("mouseover",function(){
+        $("h1:first").text("Thank you for coming")
+    })
+
+    $("h1:first").on("mouseout",function(){
+        $("h1:first").text("Welcome to JS Class")
+    })
+</script>
+
+<script>
+    //Object Oriented Programming (OOP)
+    // Class
+    // Model or Blueprint
+    //1. Properties
+    //2. Methods
+    //3. constructor
+
+    // Object
+    // instance of the class
+
+    //Charecterstics of OOP
+    //1. Encapsulation
+    //2. Inheritance
+    //3. Abstraction
+    //4. Polymorhphism
+
+
+    //Constructor function (Class)
+    // function Person(name, age){
+    //     this.name=name;
+    //     this.age=age;
     // }
-    // , 1000);
 
-    //getElementById
-    var highlightLi=document.getElementById("highlight");
-    highlightLi.style.color="green";
+    // Person.prototype.showName=function(){
+    //     console.log(this.name)
+    //     //Business Logic
+    // }
 
-    //getElementsByClassName
-    var boldedLis=document.getElementsByClassName("bolded");
-    boldedLis[0].style.color="red";
+    class Person{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
 
-    //getElementsByTagName
-    var allLis=document.getElementsByTagName("li");
-    allLis[2].style.color="orange"
+        showName(){
+            console.log(this.name)
+        }
+    }
 
-    //querySelector - first matched element only
-    var firstBoldedLi=document.querySelector(".bolded")
-    var firstH1=document.querySelector("h1");
-    var highlightedLi=document.querySelector("#highlight");
+    var varma=new Person("Varma",46); //Object
+    console.log(varma.showName());
 
+    var ravi=new Person("Ravi",24)// another Object
+    console.log(ravi.showName())
+
+
+    // function Student(name,age, school){
+    //     this.name=name;
+    //     this.age=age;
+    //     this.school=school;
+    // }
+
+    // Student.prototype=new Person();
+
+    // Student.prototype.showSchool=function(){
+    //     console.log(this.school)
+    // }
+
+    class Student extends Person{
+        constructor(name,age,school){
+            super(name,age);
+            this.school=school;
+        }
+
+        showSchool(){
+            console.log(this.school)
+        }
+    }
+
+    var ram=new Student("Ram",20,"JNTU");
+    console.log(ram.showSchool())
+    console.log(ram.showName())
+
+    //ES6
+
+    //TypeScript
+
+    //Create Account
+    // Add property balance
+    // Add methods withdraw and deposit
+
+    //Create SavingsAccount
+    // inherit Account
+    // calculateInterest
+
+    //Create CurrentAccount
+    // inherit Account
+    // checkBalanceRequirement
 
 </script>
