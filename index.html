@@ -426,6 +426,11 @@
         
         </script>
         <script src="class.js"></script>
+        <style>
+            .subheading{
+                color:blueviolet
+            }
+        </style>
     </head>
     <body>
         <h1>Welcome to JS class</h1>
@@ -436,13 +441,9 @@
             <li class="bolded">List Item 2</li>
             <li class="bolded">List Item 3</li>
         </ul>
-
+        <a href="http://yahoo.com">Yahoo!!!</a>
         <button>Say Hello</button>
-
-        <div>Div 1</div>
-        <div class="highlight">Div 2</div>
-        <div id="third">Div 3</div>
-        <div class="highlight">Div 4</div>
+        <button id="colorChanger">Change Color</button>
     </body>
 </html>
 <script>
@@ -479,7 +480,45 @@
     // var firstH1=document.querySelector("h1");
     // var highlightedLi=document.querySelector("#highlight");
 
+//Manipulation
 
+    //1. style property of tag
+    // highlightLi.style.color="green";
+    
+    // //2. Using classList property of tag
+    // var p=document.querySelector("p");
+    // p.classList.add("subheading");
+    
+    // //3.Manipulate content of tags using  textContent or innerHTML
+    // p.textContent="Good Morning";
+    // p.innerHTML="Good <b>Morning</b>";
+
+    // //4. Manipulate attributes
+    // var a=document.querySelector("a");
+    // var link=a.getAttribute("href");
+    // a.setAttribute("href","http://google.com");
+    // a.textContent="Google";
+
+    // //Events
+    // var button=document.querySelector("button");
+    // button.addEventListener("click",function(){
+    //     alert("Hello")
+    // })
+
+    // h1.addEventListener("mouseover",function(){
+    //     this.textContent="Thank you for coming"
+    // })
+
+    // h1.addEventListener("mouseout",function(){
+    //     h1.textContent="Welcome to JS class"
+    // })
+
+    // var  colorChangerButton=document.querySelector("#colorChanger");
+    
+    // colorChangerButton.addEventListener("click",function(){
+    //     var body=document.querySelector("body");
+    //     body.style.backgroundColor="yellow";
+    // })
 </script>
 
 <script>
@@ -593,8 +632,6 @@
     // inherit Account
     // calculateInterest
 
-    //Create CurrentAccount
-    // inherit Account
-    // checkBalanceRequirement
+    
 
 </script>
