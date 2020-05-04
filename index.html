@@ -635,3 +635,193 @@
     
 
 </script>
+
+<script>
+    
+    // var a=10;
+
+    // //let
+    // if(true){
+    //     let a=20;
+    //     console.log(a); //20
+    // }
+
+    // console.log(a); //10
+
+    //const
+    const PI=3.1415;
+    //PI=2.44; //Error
+
+    const professor={
+        name:"Varma"
+    }
+
+    professor.age=46;
+    //professor={}; //Error because you are assigning new object to variable which is not allowed
+
+    //Default function parameters
+    // var add=function(a=0,b=0){
+    //     return a+b;
+    // }
+
+    var firstName="Varma";
+    var lastName="Bhupatiraju";
+    var fullName=firstName + " " + lastName;
+
+    var street="MIG 27/1, Road #5"
+    var area="KPHB"
+    var city="Hyderabad"
+    var state="TS"
+    var postalCode="500072"
+
+    var shippingLabel=firstName + " " + lastName + "\n"
+        + street + "\n"
+        + city + "," + state + "\n"
+        + postalCode;
+    
+    console.log(shippingLabel);
+
+    var newShippingLabel=`
+    ${firstName} ${lastName}
+    ${street}
+    ${area}, ${city}
+    ${postalCode}
+    `
+    console.log(newShippingLabel);
+
+    //Rest operator
+    var add=function(...numbers){
+       //console.log(numbers);
+       return numbers.reduce(function(total,number){
+           return total+number;
+       })
+    }
+
+    // var a=[1,2,3]
+    // var b=[4,5,6]
+
+    // //Spread operator
+    // var c=[...a,...b];
+
+    var family=["varma","neelima","suma","mother","father","mother-in-law","father-in-law"];
+
+    // var me=family[0]
+    // var wife=family[1]
+    // var daughter=family[2]
+
+    //Array destructering
+    var [me,wife,daughter]=family;
+    console.log(me,wife,daughter);
+
+    var student={
+        name:"Varma",
+        age:46
+    }
+
+    // var name=student.name;
+    // var age=student.age;
+
+    var {name,age}=student;
+    console.log(name,age);
+
+    function sum(a,b){
+        return a+b;
+    }
+
+    var sum=function(a=0,b=0){
+        return a+b;
+    }
+
+    //Arrow functions
+    var sum=(a,b)=>a+b;
+
+    console.log(sum(1,2))
+
+    function a(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log("function a logged");
+                resolve("succees")
+            },5000)
+        })
+        
+    }
+
+    function b(){
+        console.log("function b logged");
+    }
+
+    a().then((result)=>{
+        b();
+    }).catch((err)=>{
+
+    });
+
+    var someVariable=10;
+
+    console.log(someVariable);
+
+    //HTML5 Storage
+
+    //localStorage
+    localStorage.setItem("username","varmab");
+    var userName=localStorage.getItem("username");
+    console.log("User name is " + userName);
+
+    localStorage.removeItem("username");
+    localStorage.clear();
+
+    //sessionStorage
+    sessionStorage.setItem("creditCardNumber","123123123")
+    var cc=sessionStorage.getItem("creditCardNumber");
+    sessionStorage.clear();
+
+    //setTimeout / setInterval
+
+    setTimeout(function(){
+        console.log("This line appear after 5 seconds")
+    },5000)
+
+    var handle=setInterval(function(){
+                    console.log("This line appear every 1 second")
+                },1000)
+
+    clearInterval(handle);
+
+    //JSON.parse and JSON.strigify
+
+    var student={
+        name:"Varma",
+        age:46
+    }
+
+    console.log(JSON.stringify(student));
+
+    var studentObjectString="{\"name\":\"Varma\",\"age\":46}"
+
+    var newStudent=JSON.parse(studentObjectString);
+    console.log(newStudent.name)
+
+    try {
+       //Code
+    } catch (error) {
+        console.error("Error happened")
+        console.log(JSON.stringify(error))
+    }
+    finally {
+
+    }
+
+    function getProfile(x,y){
+        console.log("My profile " + this.displayName  + " " + x + " " + y);
+    }
+
+    
+    var person={displayName:"Varma B"}
+
+    getProfile(person,1,2);
+
+    getProfile.call(person,1,2);
+    getProfile.apply(person,[1,2]);
+
+</script>
